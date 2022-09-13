@@ -1,24 +1,20 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link} from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
 
-export default function NavigationBar() {
+export default function Footer() {
+    let year = new Date().getFullYear();
+
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-        <Link to="/" className='navbar-brand'>Student Management System</Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link to="/student" className="nav-link">Add Student</Link>
-            <Link to="/listStudents" className="nav-link">View Students</Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <Navbar fixed="bottom" bg="dark" variant="dark">  
+        <Container  className="text-center text-muted">
+            <Col lg={12} className="text-center text-light">
+            {year} - All Rights are Reserved!!!
+            </Col>
+        </Container>
+      </Navbar>
     </div>
   )
 }
